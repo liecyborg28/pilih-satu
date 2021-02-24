@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',
+        sans-serif;
+}
+
+body {
+    background-color: #eee;
+}
+
+#container {
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-areas:
+        "header"
+        "opsi"
+        "simpan"
+        "hasil";
+    grid-template-rows: 0.1fr 1fr 0.08fr 1.5fr;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #222;
+    padding: 6px;
+    grid-area: header;
+}
+
+h1.satu {
+    color: #fff;
+}
+
+h1.dua {
+    background-color: orange;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 3px;
+    color: #222;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: opsi;
+    justify-content: space-evenly;
+}
+
+.card {
+    font-size: 0.8em;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 180px;
+    height: 220px;
+    background-color: salmon;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 0px 3.5px green;
+    transition: 0.1s;
+}
+
+.card-header {
+    height: 20px;
+    background-color: orange;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+img {
+    width: 180px;
+    height: 180px;
+    color: #fff;
+}
+
+.card-header,
+img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-button {
+    height: 20px;
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    background-color: #222;
+    color: #fff;
+}
+
+.simpan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #222;
+    grid-area: simpan;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #666;
+    border: none;
+    color: #fff;
+}
+
+.simpan:visited {
+    color: #fff;
+}
+
+div.hasil {
+    margin-top: 5%;
+    grid-area: hasil;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header-hasil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7%;
+    background-color: orange;
+    color: #222;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+div.hasil p {
+    align-self: center;
+    font-size: 1.5em;
+    color: #222;
+}
+
+/* Ranking */
+.order {
+    display: grid;
+    margin: 0.5% 1%;
+    width: 100%;
+    align-items: center;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-areas: "gambar-mini bar persen";
+}
+
+.gambar-mini {
+    width: 40px;
+    height: 40px;
+    grid-area: gambar-mini;
+    border-radius: 50%;
+    place-self: center;
+}
+
+.bar {
+    grid-area: bar;
+    border-radius: 3px;
+    width: 0%;
+    height: 40px;
+    justify-self: self-start;
+    align-self: center;
+}
+
+/* Classlist for javascript */
+.persen {
+    grid-area: persen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.click-tombol {
+    background-color: green;
+    color: #fff;
+    transition: 0.1s;
+}
+
+.click-card {
+    box-shadow: 0px 0px 0px 3.5px green;
+    transition: 0.1s;
+}
+
+.click-gambar {
+    border-radius: 5px;
+    transform: scale(0.7);
+    transition: 0.15s;
+}
+
+.click-simpan {
+    background-color: green;
+    transition: 0.3s;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 768px) {
+    #container {
+        grid-template-rows: 0.1fr 2fr 0.08fr 1fr;
+    }
+
+    .card {
+        font-size: 0.7em;
+        margin: 2%;
+        width: 160px;
+        height: 200px;
+        background-color: salmon;
+    }
+
+    img {
+        width: 160px;
+        height: 160px;
+        color: #fff;
+    }
+
+    .gambar-mini {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header-hasil {
+        font-size: 0.9em;
+    }
+
+    .order {
+        grid-template-columns: 1fr 5fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+        grid-template-rows: 0.1fr 2fr 0.06fr 1fr;
+    }
+}
